@@ -1,0 +1,99 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <script type="application/javascript">
+
+        // Estilos de la interfaz
+        const style = document.createElement('style');
+        style.innerHTML = `
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                background-color: #f9f9f9;
+            }
+            header {
+                background-color: #FF6EA3;
+                color: #fff;
+                padding: 20px;
+                text-align: center;
+                font-size: 24px;
+                font-weight: bold;
+            }
+            #chatContainer {
+                flex: 1;
+                overflow-y: auto;
+                padding: 10px;
+                display: flex;
+                flex-direction: column-reverse;
+                background-color: #ffffff;
+                border-top: 2px solid #FF6EA3;
+            }
+            #messageInputContainer {
+                display: flex;
+                padding: 10px;
+                background-color: #fff;
+                border-top: 2px solid #FF6EA3;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            #messageInput {
+                flex: 1;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+            #sendButton {
+                margin-left: 10px;
+                padding: 10px;
+                border: none;
+                background-color: #FF6EA3;
+                color: white;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            #sendButton:hover {
+                background-color: #ff4e89;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Crear el encabezado
+        const header = document.createElement('header');
+        header.innerText = "Chat";
+        document.body.appendChild(header);
+
+        // Contenedor de mensajes (vacío por ahora)
+        const chatContainer = document.createElement('div');
+        chatContainer.id = "chatContainer";
+        document.body.appendChild(chatContainer);
+
+        // Contenedor del input y botón
+        const messageInputContainer = document.createElement('div');
+        messageInputContainer.id = "messageInputContainer";
+
+        // Input de texto
+        const messageInput = document.createElement('input');
+        messageInput.id = "messageInput";
+        messageInput.placeholder = "Escribe un mensaje...";
+        messageInputContainer.appendChild(messageInput);
+
+        // Botón de enviar
+        const sendButton = document.createElement('button');
+        sendButton.id = "sendButton";
+        sendButton.innerText = "Enviar";
+        messageInputContainer.appendChild(sendButton);
+
+        document.body.appendChild(messageInputContainer);
+
+    </script>
+  </body>
+</html>
